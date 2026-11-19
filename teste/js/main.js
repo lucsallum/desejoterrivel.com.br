@@ -62,8 +62,7 @@
     video.hidden = false;        // o poster é o 1º frame, idêntico à foto
     video.addEventListener('ended', () => { descidaCancelada = false; descer(900); }, { once: true });
 
-    // Autoplay bloqueado (economia de bateria, "reduzir movimento"): o vídeo
-    // fica parado no 1º frame e toca no primeiro toque na capa.
+    // Último recurso: o vídeo fica parado no 1º frame e toca no primeiro toque.
     const tocarNoToque = () => {
       descerSemVideo();
       intro.addEventListener('click', () => {
@@ -71,8 +70,25 @@
         video.play().catch(() => {});
       }, { once: true });
     };
-    if (reduzMovimento) tocarNoToque();
-    else video.play().catch(tocarNoToque);
+
+    // Autoplay de vídeo bloqueado (economia de bateria/dados): imagens animadas
+    // não são bloqueadas, então troca pelo mesmo clipe em AVIF animado.
+    // Enquanto a imagem carrega, o poster do vídeo (= 1º frame) segura a tela.
+    const DURACAO_MS = 7900;
+    const usarImagemAnimada = () => {
+      const img = new Image();
+      img.className = 'capa__video';
+      img.alt = '';
+      img.setAttribute('aria-hidden', 'true');
+      img.onload = () => {
+        video.replaceWith(img);   // a animação começa do 1º frame ao entrar na página
+        timerPlaceholder = setTimeout(() => descer(900), DURACAO_MS);
+      };
+      img.onerror = tocarNoToque; // navegador sem AVIF animado
+      img.src = `${base}.avif`;
+    };
+
+    video.play().catch(usarImagemAnimada);
   } else if (naCapa) {
     descerSemVideo();
   }
