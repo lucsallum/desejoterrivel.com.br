@@ -43,10 +43,10 @@ a { color: inherit; }
 .pular-conteudo:focus { left: 1rem; top: 1rem; }
 
 /* ================= 1. CAPA ================= */
-/* Tela cheia. Em telas estreitas (celular) a foto é recortada e mostra o lado
-   direito, como a frente da fita. Conforme a tela alarga, a foto vai se abrindo
-   para a esquerda até aparecer inteira; daí em diante a largura trava e o resto
-   fica no fundo escuro. Proporção da foto: 1931 × 2000. */
+/* Tela cheia. O quadro da capa tem no máximo a proporção do vídeo (9:16),
+   centralizado: no celular ocupa a tela toda; em telas largas fica uma faixa
+   vertical no meio, com o fundo escuro dos lados. A foto por baixo mostra só o
+   lado direito (o mesmo recorte do vídeo), como a frente da fita. */
 .intro {
   position: relative;
   height: 100vh;
@@ -59,15 +59,24 @@ a { color: inherit; }
 .capa {
   position: relative;
   height: 100%;
-  width: min(100%, 96.55vh);
-  width: min(100%, 96.55svh);
+  width: min(100%, 56.25vh);
+  width: min(100%, 56.25svh);
   overflow: hidden;
 }
-.capa__foto img, .capa__video {
+.capa__foto img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: 100% 50%;   /* ancora no lado direito */
+}
+/* O vídeo (9:16) é o lado direito da foto: 1125 dos 1931 px, altura inteira.
+   Colado à direita, na mesma escala da foto, encaixa pixel a pixel com ela. */
+.capa__video {
+  position: absolute; top: 0; right: 0;
+  height: 100%; width: auto;
+  aspect-ratio: 9 / 16;
+  max-width: none;
+  object-fit: cover;
 }
 .so-leitor {
   position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
@@ -84,13 +93,19 @@ a { color: inherit; }
   margin: 0 0 .6rem;
   font-family: var(--titulo); font-size: 1rem; letter-spacing: .02em; color: var(--amarelo);
 }
+/* Cabeçalho do player: a logo é a marca (menor), o título do álbum é a manchete.
+   Título + ano formam um grupo só, como na capa do encarte (os dois em branco). */
+.verso__logo { width: clamp(132px, 34vw, 196px); height: auto; margin: 0 0 clamp(.875rem, 2.5vw, 1.25rem); }
 .verso__cab h2 {
   margin: 0;
   font-family: var(--titulo); font-weight: 700; line-height: .95;
-  font-size: clamp(2.6rem, 11vw, 5.5rem);
+  font-size: clamp(1.75rem, 8.5vw, 3.75rem);   /* "DÉCADA DODÓI" cabe numa linha a partir de 320px */
 }
-.verso__cab h2 span { display: block; font-size: .5em; margin-top: .25em; color: var(--apagado); }
-.manual { max-width: 34em; margin: 1.5rem 0 1.75rem; font-style: italic; color: var(--apagado); }
+.verso__cab h2 span { display: block; font-size: .5em; margin-top: .3em; letter-spacing: .04em; }
+.manual {
+  max-width: 30em; margin: clamp(1.5rem, 4vw, 2rem) 0 2rem;
+  line-height: 1.5; text-wrap: pretty; color: var(--branco);
+}
 .iniciar {
   min-height: 48px; padding: 0 1.4rem;
   font-family: var(--titulo); font-size: 1rem; text-transform: uppercase; letter-spacing: .02em;
@@ -115,7 +130,7 @@ a { color: inherit; }
   font-family: var(--titulo); font-size: 1.05rem; line-height: 1.15; text-transform: uppercase;
 }
 .faixa__num { min-width: 1.1em; color: var(--apagado); }
-.faixa__tit sup { font-size: .58em; margin-left: .3em; vertical-align: .75em; color: var(--apagado); font-weight: 700; }
+.faixa__tit sup { font-size: .75em; margin-left: .35em; vertical-align: .5em; line-height: 0; color: var(--apagado); font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
 .faixa__tocar .raio { align-self: center; margin-left: auto; visibility: hidden; }
 .faixa__tocar:hover .faixa__tit { color: var(--amarelo); }
 .faixa__letra {
@@ -133,12 +148,8 @@ a { color: inherit; }
   padding: clamp(3rem, 9vw, 6rem) var(--margem);
   color-scheme: light;
 }
-.papel__cab, .letras { max-width: 72rem; margin: 0 auto; }
-.papel__cab h2 {
-  margin: 0; font-family: var(--titulo); font-size: clamp(2.6rem, 11vw, 5.5rem); line-height: .95;
-}
-.papel__cab p { margin: .8rem 0 0; font-style: italic; max-width: 34em; }
-.letras { margin-top: clamp(2.5rem, 7vw, 4rem); }
+.letras, .papel__nota { max-width: 72rem; margin: 0 auto; }
+.papel__nota { font-style: italic; }
 @media (min-width: 60rem) { .letras { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; } }
 .letras__rotulo {
   margin: 0 0 1.75rem; font-family: var(--titulo); font-size: 1.15rem;
@@ -182,6 +193,15 @@ a { color: inherit; }
 .rodape { text-align: center; padding: 3rem var(--margem) calc(var(--barra-h) + 3rem + env(safe-area-inset-bottom)); color: var(--apagado); font-size: .95rem; }
 .rodape .marca { justify-content: center; }
 .rodape p { margin: 0; }
+.links { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: .75rem; margin: 1.75rem 0 0; padding: 0; }
+.links a {
+  display: inline-flex; align-items: center; gap: .5rem;
+  min-height: 48px; padding: 0 1.25rem;
+  font-family: var(--titulo); font-size: .95rem; text-transform: uppercase; letter-spacing: .02em; text-decoration: none;
+  color: var(--branco); border: 2px solid var(--branco); border-radius: 999px;
+}
+.links svg { width: 20px; height: 20px; fill: currentColor; }
+.links a:hover { background: var(--amarelo); border-color: var(--amarelo); color: var(--tinta); }
 
 /* ================= BARRA FIXA ================= */
 .barra {
@@ -190,10 +210,13 @@ a { color: inherit; }
   background: rgba(21, 10, 11, .96);
   border-top: 2px solid var(--amarelo);
   transform: translateY(105%);
-  transition: transform .35s ease;
+  /* escondida = fora do Tab e do leitor de tela; o visibility só vira
+     depois que a barra termina de descer */
+  visibility: hidden;
+  transition: transform .35s ease, visibility 0s linear .35s;
 }
 @supports (backdrop-filter: blur(8px)) { .barra { background: rgba(21, 10, 11, .86); backdrop-filter: blur(10px); } }
-.barra.visivel { transform: none; }
+.barra.visivel { transform: none; visibility: visible; transition-delay: 0s; }
 .barra__prog {
   display: block; width: 100%; height: 22px; margin: 0;
   accent-color: var(--amarelo); background: transparent; cursor: pointer;

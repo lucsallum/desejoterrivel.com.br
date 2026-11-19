@@ -42,9 +42,8 @@
   const naCapa = !location.hash;
   if (naCapa) scrollTo(0, 0);
 
-  // 9:16 só cabe bem em tela em pé; em tela larga usa o 16:9 (se existir)
-  const emPe = innerWidth / innerHeight <= 0.75;
-  const base = emPe ? video.dataset.srcRetrato : video.dataset.srcPaisagem;
+  // O vídeo 9:16 é o lado direito da foto: encaixa em qualquer tela (ver CSS).
+  const base = video.dataset.srcRetrato;
 
   // sem vídeo: a capa fica parada uns segundos e a página desce sozinha
   const descerSemVideo = () => {
@@ -60,7 +59,12 @@
     video.src = `${base}.mp4`;   // MP4/H.264: o WebM o iPhone diz que "talvez" toca e falha
     video.preload = 'auto';
     video.hidden = false;        // o poster é o 1º frame, idêntico à foto
-    video.addEventListener('ended', () => { descidaCancelada = false; descer(900); }, { once: true });
+    video.addEventListener('ended', () => {
+      descidaCancelada = false;
+      descer(900);
+      // já fora da tela: volta a capa ao 1º frame, para quem rolar de volta ao topo
+      setTimeout(() => { video.currentTime = 0; }, 1500);
+    }, { once: true });
 
     // Último recurso: o vídeo fica parado no 1º frame e toca no primeiro toque.
     const tocarNoToque = () => {

@@ -22,7 +22,7 @@
 <link rel="preload" href="fonts/futura-bold.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="img/capa-800.avif" as="image" type="image/avif"
       imagesrcset="img/capa-800.avif 800w, img/capa-1600.avif 1600w" imagesizes="97svh">
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=14">
 </head>
 <body>
 
@@ -54,10 +54,10 @@
 <!-- ============ 2. PLAYER (verso do encarte) ============ -->
 <section id="player" class="verso" aria-labelledby="titulo-album">
   <header class="verso__cab">
-    <p class="marca">DESEJO TERRÍVEL <svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></p>
+    <img class="verso__logo" src="img/logo-640.webp" srcset="img/logo-320.webp 320w, img/logo-640.webp 640w" sizes="(min-width: 36rem) 196px, 34vw" width="640" height="394" alt="Desejo Terrível">
     <h2 id="titulo-album">DÉCADA DODÓI <span>2026—2016</span></h2>
     <p class="manual">Com este dispositivo, você se sintonizará às reverberações de uma década que confundiu o real com o virtual, o delírio com informação e a vigilância com o cotidiano. Antes de iniciar, certifique-se de estar em ambiente seguro e confortável. Boa travessia.</p>
-    <button type="button" class="iniciar" data-tocar="a1">▶ Iniciar a travessia</button>
+    <button type="button" class="iniciar" data-tocar="a1"><span aria-hidden="true">▶</span> Iniciar a travessia</button>
   </header>
 
   <div class="lados">
@@ -65,26 +65,26 @@
 <section class="lado" aria-labelledby="lado-a">
   <h3 id="lado-a">LADO A</h3>
   <ol class="faixas">
-    <li class="faixa" data-id="a1"><button type="button" class="faixa__tocar" data-tocar="a1" aria-label="Tocar A1, Mordendo A Orelha"><span class="faixa__num">1</span><span class="faixa__tit">MORDENDO A ORELHA<sup>2:51</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a1">letra</a></li>
-    <li class="faixa" data-id="a2"><button type="button" class="faixa__tocar" data-tocar="a2" aria-label="Tocar A2, Paranoia"><span class="faixa__num">2</span><span class="faixa__tit">PARANOIA<sup>3:28</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a2">letra</a></li>
-    <li class="faixa" data-id="a3"><button type="button" class="faixa__tocar" data-tocar="a3" aria-label="Tocar A3, Planando Em Campos Tóxicos Do Goiás"><span class="faixa__num">3</span><span class="faixa__tit">PLANANDO EM CAMPOS TÓXICOS DO GOIÁS<sup>4:25</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a3">letra</a></li>
-    <li class="faixa" data-id="a4"><button type="button" class="faixa__tocar" data-tocar="a4" aria-label="Tocar A4, O Vampiro"><span class="faixa__num">4</span><span class="faixa__tit">O VAMPIRO<sup>2:55</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a4">letra</a></li>
-    <li class="faixa" data-id="a5"><button type="button" class="faixa__tocar" data-tocar="a5" aria-label="Tocar A5, Deus &amp; Deusa"><span class="faixa__num">5</span><span class="faixa__tit">DEUS &amp; DEUSA<sup>3:07</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a5">letra</a></li>
-    <li class="faixa" data-id="a6"><button type="button" class="faixa__tocar" data-tocar="a6" aria-label="Tocar A6, Frame Do Caos"><span class="faixa__num">6</span><span class="faixa__tit">FRAME DO CAOS<sup>3:41</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a6">letra</a></li>
-    <li class="faixa" data-id="a7"><button type="button" class="faixa__tocar" data-tocar="a7" aria-label="Tocar A7, Plim Plim"><span class="faixa__num">7</span><span class="faixa__tit">PLIM PLIM<sup>3:21</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a7">letra</a></li>
+    <li class="faixa" data-id="a1"><button type="button" class="faixa__tocar" data-tocar="a1" aria-label="Tocar A1, Mordendo A Orelha"><span class="faixa__num">1</span><span class="faixa__tit">MORDENDO A ORELHA<sup>2:51</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a1">letra<span class="so-leitor"> de Mordendo a Orelha</span></a></li>
+    <li class="faixa" data-id="a2"><button type="button" class="faixa__tocar" data-tocar="a2" aria-label="Tocar A2, Paranoia"><span class="faixa__num">2</span><span class="faixa__tit">PARANOIA<sup>3:28</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a2">letra<span class="so-leitor"> de Paranoia</span></a></li>
+    <li class="faixa" data-id="a3"><button type="button" class="faixa__tocar" data-tocar="a3" aria-label="Tocar A3, Planando Em Campos Tóxicos Do Goiás"><span class="faixa__num">3</span><span class="faixa__tit">PLANANDO EM CAMPOS TÓXICOS DO GOIÁS<sup>4:25</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a3">letra<span class="so-leitor"> de Planando em Campos Tóxicos do Goiás</span></a></li>
+    <li class="faixa" data-id="a4"><button type="button" class="faixa__tocar" data-tocar="a4" aria-label="Tocar A4, O Vampiro"><span class="faixa__num">4</span><span class="faixa__tit">O VAMPIRO<sup>2:55</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a4">letra<span class="so-leitor"> de O Vampiro</span></a></li>
+    <li class="faixa" data-id="a5"><button type="button" class="faixa__tocar" data-tocar="a5" aria-label="Tocar A5, Deus &amp; Deusa"><span class="faixa__num">5</span><span class="faixa__tit">DEUS &amp; DEUSA<sup>3:07</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a5">letra<span class="so-leitor"> de Deus &amp; Deusa</span></a></li>
+    <li class="faixa" data-id="a6"><button type="button" class="faixa__tocar" data-tocar="a6" aria-label="Tocar A6, Frame Do Caos"><span class="faixa__num">6</span><span class="faixa__tit">FRAME DO CAOS<sup>3:41</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a6">letra<span class="so-leitor"> de Frame do Caos</span></a></li>
+    <li class="faixa" data-id="a7"><button type="button" class="faixa__tocar" data-tocar="a7" aria-label="Tocar A7, Plim Plim"><span class="faixa__num">7</span><span class="faixa__tit">PLIM PLIM<sup>3:21</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-a7">letra<span class="so-leitor"> de Plim Plim</span></a></li>
   </ol>
 </section>
 <section class="lado" aria-labelledby="lado-b">
   <h3 id="lado-b">LADO B</h3>
   <ol class="faixas">
-    <li class="faixa" data-id="b1"><button type="button" class="faixa__tocar" data-tocar="b1" aria-label="Tocar B1, Menino Do Acre"><span class="faixa__num">1</span><span class="faixa__tit">MENINO DO ACRE<sup>3:13</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b1">letra</a></li>
-    <li class="faixa" data-id="b2"><button type="button" class="faixa__tocar" data-tocar="b2" aria-label="Tocar B2, Jurema"><span class="faixa__num">2</span><span class="faixa__tit">JUREMA<sup>4:11</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b2">letra</a></li>
-    <li class="faixa" data-id="b3"><button type="button" class="faixa__tocar" data-tocar="b3" aria-label="Tocar B3, Cometa Do Apocalipse"><span class="faixa__num">3</span><span class="faixa__tit">COMETA DO APOCALIPSE<sup>4:29</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b3">letra</a></li>
-    <li class="faixa" data-id="b4"><button type="button" class="faixa__tocar" data-tocar="b4" aria-label="Tocar B4, Lobisângela"><span class="faixa__num">4</span><span class="faixa__tit">LOBISÂNGELA<sup>2:45</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b4">letra</a></li>
-    <li class="faixa" data-id="b5"><button type="button" class="faixa__tocar" data-tocar="b5" aria-label="Tocar B5, Baba"><span class="faixa__num">5</span><span class="faixa__tit">BABA<sup>3:01</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b5">letra</a></li>
-    <li class="faixa" data-id="b6"><button type="button" class="faixa__tocar" data-tocar="b6" aria-label="Tocar B6, Pra Saber Que Em Si"><span class="faixa__num">6</span><span class="faixa__tit">PRA SABER QUE EM SI<sup>3:06</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b6">letra</a></li>
-    <li class="faixa" data-id="b7"><button type="button" class="faixa__tocar" data-tocar="b7" aria-label="Tocar B7, O Canto Da Andorinha"><span class="faixa__num">7</span><span class="faixa__tit">O CANTO DA ANDORINHA<sup>4:13</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b7">letra</a></li>
-    <li class="faixa" data-id="b8"><button type="button" class="faixa__tocar" data-tocar="b8" aria-label="Tocar B8, Lobisângela (Single)"><span class="faixa__num">8</span><span class="faixa__tit">LOBISÂNGELA (SINGLE)<sup>2:54</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b8">letra</a></li>
+    <li class="faixa" data-id="b1"><button type="button" class="faixa__tocar" data-tocar="b1" aria-label="Tocar B1, Menino Do Acre"><span class="faixa__num">1</span><span class="faixa__tit">MENINO DO ACRE<sup>3:13</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b1">letra<span class="so-leitor"> de Menino do Acre</span></a></li>
+    <li class="faixa" data-id="b2"><button type="button" class="faixa__tocar" data-tocar="b2" aria-label="Tocar B2, Jurema"><span class="faixa__num">2</span><span class="faixa__tit">JUREMA<sup>4:11</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b2">letra<span class="so-leitor"> de Jurema</span></a></li>
+    <li class="faixa" data-id="b3"><button type="button" class="faixa__tocar" data-tocar="b3" aria-label="Tocar B3, Cometa Do Apocalipse"><span class="faixa__num">3</span><span class="faixa__tit">COMETA DO APOCALIPSE<sup>4:29</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b3">letra<span class="so-leitor"> de Cometa do Apocalipse</span></a></li>
+    <li class="faixa" data-id="b4"><button type="button" class="faixa__tocar" data-tocar="b4" aria-label="Tocar B4, Lobisângela"><span class="faixa__num">4</span><span class="faixa__tit">LOBISÂNGELA<sup>2:45</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b4">letra<span class="so-leitor"> de Lobisângela</span></a></li>
+    <li class="faixa" data-id="b5"><button type="button" class="faixa__tocar" data-tocar="b5" aria-label="Tocar B5, Baba"><span class="faixa__num">5</span><span class="faixa__tit">BABA<sup>3:01</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b5">letra<span class="so-leitor"> de Baba</span></a></li>
+    <li class="faixa" data-id="b6"><button type="button" class="faixa__tocar" data-tocar="b6" aria-label="Tocar B6, Pra Saber Que Em Si"><span class="faixa__num">6</span><span class="faixa__tit">PRA SABER QUE EM SI<sup>3:06</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b6">letra<span class="so-leitor"> de Pra Saber Que em Si</span></a></li>
+    <li class="faixa" data-id="b7"><button type="button" class="faixa__tocar" data-tocar="b7" aria-label="Tocar B7, O Canto Da Andorinha"><span class="faixa__num">7</span><span class="faixa__tit">O CANTO DA ANDORINHA<sup>4:13</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b7">letra<span class="so-leitor"> de O Canto da Andorinha</span></a></li>
+    <li class="faixa" data-id="b8"><button type="button" class="faixa__tocar" data-tocar="b8" aria-label="Tocar B8, Lobisângela (Single)"><span class="faixa__num">8</span><span class="faixa__tit">LOBISÂNGELA (SINGLE)<sup>2:54</sup></span><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></button><a class="faixa__letra" href="#letra-b8">letra<span class="so-leitor"> de Lobisângela (single)</span></a></li>
   </ol>
 </section>
 <!-- TRACKLIST:END -->
@@ -93,15 +93,12 @@
 
 <!-- ============ 3. LETRAS (lâmina interna) ============ -->
 <section id="letras" class="papel" aria-labelledby="titulo-letras">
-  <header class="papel__cab">
-    <h2 id="titulo-letras">LETRAS</h2>
-    <p>Todas as letras por Drin Cortes. Citação a “Símbolo da Paz”, de Ventania, em B3.</p>
-  </header>
+  <h2 id="titulo-letras" class="so-leitor">Letras</h2>
   <div class="letras">
 <!-- LETRAS:START -->
 <div class="letras__lado"><p class="letras__rotulo">LADO A</p>
 <article class="letra" id="letra-a1" data-id="a1">
-  <header class="letra__cab"><span class="letra__cod">A1</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>MORDENDO A ORELHA</h3><p class="letra__origem">Neurose do Momento, 2026 · 2:51</p><button type="button" class="ouvir" data-tocar="a1">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">A1</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>MORDENDO A ORELHA</h3><p class="letra__origem">Neurose do Momento, 2026 · 2:51</p><button type="button" class="ouvir" data-tocar="a1"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Mordendo a Orelha</span></button></header>
   <div class="letra__texto">
     <p>Na neurose do momento<br>
 Ansioso para o instante a seguir</p>
@@ -131,7 +128,7 @@ Doido pra esquecer.</p>
   </div>
 </article>
 <article class="letra" id="letra-a2" data-id="a2">
-  <header class="letra__cab"><span class="letra__cod">A2</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>PARANOIA</h3><p class="letra__origem">Neurose do Momento, 2026 · 3:28</p><button type="button" class="ouvir" data-tocar="a2">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">A2</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>PARANOIA</h3><p class="letra__origem">Neurose do Momento, 2026 · 3:28</p><button type="button" class="ouvir" data-tocar="a2"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Paranoia</span></button></header>
   <div class="letra__texto">
     <p>Mais um gole de whisky e minha pressão vai no chão<br>
 Faz frio e sinto a boca a salivar<br>
@@ -154,7 +151,7 @@ Ou será… só paranoia?</p>
   </div>
 </article>
 <article class="letra" id="letra-a3" data-id="a3">
-  <header class="letra__cab"><span class="letra__cod">A3</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>PLANANDO EM CAMPOS TÓXICOS DO GOIÁS</h3><p class="letra__origem">Neurose do Momento, 2026 · 4:25</p><button type="button" class="ouvir" data-tocar="a3">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">A3</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>PLANANDO EM CAMPOS TÓXICOS DO GOIÁS</h3><p class="letra__origem">Neurose do Momento, 2026 · 4:25</p><button type="button" class="ouvir" data-tocar="a3"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Planando em Campos Tóxicos do Goiás</span></button></header>
   <div class="letra__texto">
     <p>O sol rachando encara a lua cheia<br>
 Alvorecer com mil léguas além<br>
@@ -177,7 +174,7 @@ E o vento me ensinava a voar</p>
   </div>
 </article>
 <article class="letra" id="letra-a4" data-id="a4">
-  <header class="letra__cab"><span class="letra__cod">A4</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>O VAMPIRO</h3><p class="letra__origem">Natureza Subterrânea, 2023 · 2:55</p><button type="button" class="ouvir" data-tocar="a4">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">A4</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>O VAMPIRO</h3><p class="letra__origem">Natureza Subterrânea, 2023 · 2:55</p><button type="button" class="ouvir" data-tocar="a4"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> O Vampiro</span></button></header>
   <div class="letra__texto">
     <p>Sexta-feira à noite<br>
 Tinha ido dormir na quarta<br>
@@ -219,7 +216,7 @@ De alguém agora já não mais<br>
   </div>
 </article>
 <article class="letra" id="letra-a5" data-id="a5">
-  <header class="letra__cab"><span class="letra__cod">A5</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>DEUS &amp; DEUSA</h3><p class="letra__origem">Natureza Subterrânea, 2023 · 3:07</p><button type="button" class="ouvir" data-tocar="a5">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">A5</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>DEUS &amp; DEUSA</h3><p class="letra__origem">Natureza Subterrânea, 2023 · 3:07</p><button type="button" class="ouvir" data-tocar="a5"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Deus &amp; Deusa</span></button></header>
   <div class="letra__texto">
     <p>Deus e Deusa<br>
 Caminhando<br>
@@ -242,7 +239,7 @@ Por milagres pessoais</p>
   </div>
 </article>
 <article class="letra" id="letra-a6" data-id="a6">
-  <header class="letra__cab"><span class="letra__cod">A6</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>FRAME DO CAOS</h3><p class="letra__origem">Natureza Subterrânea, 2023 · 3:41</p><button type="button" class="ouvir" data-tocar="a6">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">A6</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>FRAME DO CAOS</h3><p class="letra__origem">Natureza Subterrânea, 2023 · 3:41</p><button type="button" class="ouvir" data-tocar="a6"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Frame do Caos</span></button></header>
   <div class="letra__texto">
     <p>Mandei minha mente pro espaço<br>
 Pra ver se encontrava lá<br>
@@ -262,7 +259,7 @@ Meu espírito sai do lugar</p>
   </div>
 </article>
 <article class="letra" id="letra-a7" data-id="a7">
-  <header class="letra__cab"><span class="letra__cod">A7</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>PLIM PLIM</h3><p class="letra__origem">Natureza Subterrânea, 2023 · 3:21</p><button type="button" class="ouvir" data-tocar="a7">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">A7</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>PLIM PLIM</h3><p class="letra__origem">Natureza Subterrânea, 2023 · 3:21</p><button type="button" class="ouvir" data-tocar="a7"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Plim Plim</span></button></header>
   <div class="letra__texto">
     <p>Plim Plim<br>
 Esconde o brilho em seu olhar<br>
@@ -286,7 +283,7 @@ Possibilitando-nos vagar pelo espaço</p>
 </div>
 <div class="letras__lado"><p class="letras__rotulo">LADO B</p>
 <article class="letra" id="letra-b1" data-id="b1">
-  <header class="letra__cab"><span class="letra__cod">B1</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>MENINO DO ACRE</h3><p class="letra__origem">Menino do Acre (single), 2021 · 3:13</p><button type="button" class="ouvir" data-tocar="b1">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">B1</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>MENINO DO ACRE</h3><p class="letra__origem">Menino do Acre (single), 2021 · 3:13</p><button type="button" class="ouvir" data-tocar="b1"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Menino do Acre</span></button></header>
   <div class="letra__texto">
     <p>Sozinho na selva surreal<br>
 Longe da egrégora da polis brutal<br>
@@ -318,7 +315,7 @@ Então já tá normal</p>
   </div>
 </article>
 <article class="letra" id="letra-b2" data-id="b2">
-  <header class="letra__cab"><span class="letra__cod">B2</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>JUREMA</h3><p class="letra__origem">Jurema (single), 2018 · 4:11</p><button type="button" class="ouvir" data-tocar="b2">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">B2</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>JUREMA</h3><p class="letra__origem">Jurema (single), 2018 · 4:11</p><button type="button" class="ouvir" data-tocar="b2"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Jurema</span></button></header>
   <div class="letra__texto">
     <p>Numa touceira de cana num matagal<br>
 No lamacê de todos os mangues tropicais<br>
@@ -358,7 +355,7 @@ O segredo natural</p>
   </div>
 </article>
 <article class="letra" id="letra-b3" data-id="b3">
-  <header class="letra__cab"><span class="letra__cod">B3</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>COMETA DO APOCALIPSE</h3><p class="letra__origem">Intererrático, 2018 · 4:29</p><button type="button" class="ouvir" data-tocar="b3">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">B3</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>COMETA DO APOCALIPSE</h3><p class="letra__origem">Intererrático, 2018 · 4:29</p><button type="button" class="ouvir" data-tocar="b3"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Cometa do Apocalipse</span></button></header>
   <div class="letra__texto">
     <p>Vem nos transformar<br>
 Volta junto a mim a um tempo mais atrás<br>
@@ -400,7 +397,7 @@ Se acabando em amor</p>
   </div>
 </article>
 <article class="letra" id="letra-b4" data-id="b4">
-  <header class="letra__cab"><span class="letra__cod">B4</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>LOBISÂNGELA</h3><p class="letra__origem">Intererrático, 2018 · 2:45</p><button type="button" class="ouvir" data-tocar="b4">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">B4</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>LOBISÂNGELA</h3><p class="letra__origem">Intererrático, 2018 · 2:45</p><button type="button" class="ouvir" data-tocar="b4"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Lobisângela</span></button></header>
   <div class="letra__texto">
     <p>Ela tem uma bandeira de pirata<br>
 Tatuada no corpo<br>
@@ -432,7 +429,7 @@ Pretendia devorar Ninguém</p>
   </div>
 </article>
 <article class="letra" id="letra-b5" data-id="b5">
-  <header class="letra__cab"><span class="letra__cod">B5</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>BABA</h3><p class="letra__origem">Intererrático, 2018 · 3:01</p><button type="button" class="ouvir" data-tocar="b5">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">B5</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>BABA</h3><p class="letra__origem">Intererrático, 2018 · 3:01</p><button type="button" class="ouvir" data-tocar="b5"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Baba</span></button></header>
   <div class="letra__texto">
     <p>Beijo uma breja no baixo<br>
 Bota no b.o. do bigodinho<br>
@@ -460,7 +457,7 @@ Brincando a banca brota um bom bagulho doido</p>
   </div>
 </article>
 <article class="letra" id="letra-b6" data-id="b6">
-  <header class="letra__cab"><span class="letra__cod">B6</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>PRA SABER QUE EM SI</h3><p class="letra__origem">Intererrático, 2018 · 3:06</p><button type="button" class="ouvir" data-tocar="b6">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">B6</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>PRA SABER QUE EM SI</h3><p class="letra__origem">Intererrático, 2018 · 3:06</p><button type="button" class="ouvir" data-tocar="b6"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Pra Saber Que em Si</span></button></header>
   <div class="letra__texto">
     <p>Conheço todas suas histórias<br>
 Reconheço-te em todas as formas<br>
@@ -488,7 +485,7 @@ Como se eu não tivesse nada a dizer</p>
   </div>
 </article>
 <article class="letra" id="letra-b7" data-id="b7">
-  <header class="letra__cab"><span class="letra__cod">B7</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>O CANTO DA ANDORINHA</h3><p class="letra__origem">Canto da Andorinha (single), 2017 · 4:13</p><button type="button" class="ouvir" data-tocar="b7">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">B7</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>O CANTO DA ANDORINHA</h3><p class="letra__origem">Canto da Andorinha (single), 2017 · 4:13</p><button type="button" class="ouvir" data-tocar="b7"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> O Canto da Andorinha</span></button></header>
   <div class="letra__texto">
     <p>Quando eu libertei minha andorinha<br>
 Esperei que só voasse junto a mim<br>
@@ -519,12 +516,13 @@ João de Barro na casa do passaralho.</p>
   </div>
 </article>
 <article class="letra" id="letra-b8" data-id="b8">
-  <header class="letra__cab"><span class="letra__cod">B8</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>LOBISÂNGELA (SINGLE)</h3><p class="letra__origem">Lobisângela (single), 2016 · 2:54</p><button type="button" class="ouvir" data-tocar="b8">▶ ouvir</button></header>
+  <header class="letra__cab"><span class="letra__cod">B8</span><h3><svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg>LOBISÂNGELA (SINGLE)</h3><p class="letra__origem">Lobisângela (single), 2016 · 2:54</p><button type="button" class="ouvir" data-tocar="b8"><span aria-hidden="true">▶</span> ouvir<span class="so-leitor"> Lobisângela (single)</span></button></header>
   <p class="letra__ref">Mesma letra de <a href="#letra-b4">B4 · Lobisângela</a>, na versão single de 2016.</p>
 </article>
 </div>
 <!-- LETRAS:END -->
   </div>
+  <p class="papel__nota">Todas as letras por Drin Cortes. Citação a “Símbolo da Paz”, de Ventania, em B3.</p>
 </section>
 
 <!-- ============ 4. CRÉDITOS ============ -->
@@ -554,7 +552,14 @@ João de Barro na casa do passaralho.</p>
 <footer class="rodape">
   <p class="marca">DESEJO TERRÍVEL <svg class="raio" viewBox="0 0 24 32" aria-hidden="true"><path d="M15 0 2 18h9L8 32l14-20h-9l2-12z"/></svg></p>
   <p>Belo Horizonte · 2026—2016</p>
-  <!-- Links de redes/streaming: entram quando as URLs forem confirmadas. -->
+  <ul class="links">
+    <li><a href="https://open.spotify.com/artist/436I0unIhU1WgsjmhYOrTz" rel="noopener" target="_blank">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5a10.5 10.5 0 1 0 0 21 10.5 10.5 0 0 0 0-21Zm4.82 15.15a.65.65 0 0 1-.9.22c-2.46-1.5-5.56-1.84-9.2-1.01a.65.65 0 1 1-.3-1.27c3.99-.91 7.41-.52 10.17 1.16.31.19.41.59.22.9Zm1.28-2.86a.82.82 0 0 1-1.12.27c-2.82-1.73-7.11-2.23-10.44-1.22a.82.82 0 1 1-.47-1.57c3.8-1.15 8.53-.59 11.77 1.4.38.23.5.74.26 1.12Zm.11-2.98C14.83 8.8 9.26 8.61 6.04 9.59a.98.98 0 1 1-.57-1.88c3.7-1.12 9.84-.9 13.73 1.4a.98.98 0 1 1-1 1.7Z"/></svg>
+      Spotify</a></li>
+    <li><a href="https://www.instagram.com/desejo.terrivel/" rel="noopener" target="_blank">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.2 12 2.2Zm0 4.66a5.14 5.14 0 1 0 0 10.28 5.14 5.14 0 0 0 0-10.28Zm0 8.48a3.34 3.34 0 1 1 0-6.68 3.34 3.34 0 0 1 0 6.68Zm5.34-9.9a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4Z"/></svg>
+      Instagram</a></li>
+  </ul>
 </footer>
 
 <!-- ============ BARRA DO PLAYER (fixa) ============ -->
@@ -577,6 +582,6 @@ João de Barro na casa do passaralho.</p>
 </div>
 
 <script src="js/faixas.js?v=3"></script>
-<script src="js/main.js?v=4"></script>
+<script src="js/main.js?v=7"></script>
 </body>
 </html>
