@@ -36,25 +36,44 @@
     requestAnimationFrame(passo);
   }
 
-  // só automatiza quem chegou pelo topo (QR, link direto), sem âncora
-  const naCapa = !location.hash && scrollY < 10;
+  // Ao recarregar, o navegador restauraria a rolagem (que ficou no player
+  // depois da descida). Sem âncora na URL, a visita começa sempre na capa.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  const naCapa = !location.hash;
+  if (naCapa) scrollTo(0, 0);
+
   // 9:16 só cabe bem em tela em pé; em tela larga usa o 16:9 (se existir)
   const emPe = innerWidth / innerHeight <= 0.75;
   const base = emPe ? video.dataset.srcRetrato : video.dataset.srcPaisagem;
-  // MP4 (H.264) toca em qualquer celular; o WebM o iPhone diz que "talvez" toca e falha
-  const ext = 'mp4';
 
   // sem vídeo: a capa fica parada uns segundos e a página desce sozinha
-  const descerSemVideo = () => { timerPlaceholder = setTimeout(() => descer(), 4000); };
+  const descerSemVideo = () => {
+    if (!reduzMovimento) timerPlaceholder = setTimeout(() => descer(), 4000);
+  };
 
-  if (base && naCapa && !reduzMovimento) {
-    video.src = `${base}.${ext}`;
+  if (base && naCapa) {
+    // iOS só deixa tocar sozinho se estiver mudo e inline (propriedades, não só atributos)
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.setAttribute('webkit-playsinline', '');
+    video.src = `${base}.mp4`;   // MP4/H.264: o WebM o iPhone diz que "talvez" toca e falha
     video.preload = 'auto';
-    video.hidden = false;
-    video.addEventListener('ended', () => descer(900), { once: true });
-    // modo economia do iPhone e afins bloqueiam autoplay: volta para a foto
-    video.play().catch(() => { video.hidden = true; descerSemVideo(); });
-  } else if (naCapa && !reduzMovimento) {
+    video.hidden = false;        // o poster é o 1º frame, idêntico à foto
+    video.addEventListener('ended', () => { descidaCancelada = false; descer(900); }, { once: true });
+
+    // Autoplay bloqueado (economia de bateria, "reduzir movimento"): o vídeo
+    // fica parado no 1º frame e toca no primeiro toque na capa.
+    const tocarNoToque = () => {
+      descerSemVideo();
+      intro.addEventListener('click', () => {
+        clearTimeout(timerPlaceholder);
+        video.play().catch(() => {});
+      }, { once: true });
+    };
+    if (reduzMovimento) tocarNoToque();
+    else video.play().catch(tocarNoToque);
+  } else if (naCapa) {
     descerSemVideo();
   }
 
