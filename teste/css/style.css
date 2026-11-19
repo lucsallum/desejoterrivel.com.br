@@ -1,0 +1,231 @@
+/* Desejo Terrível — Década Dodói
+   Cores e fontes tiradas do arquivo de impressão do encarte. */
+
+@font-face { font-family: "Futura DT"; src: url(../fonts/futura-bold.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Futura DT Cond"; src: url(../fonts/futura-condensed-extrabold.woff2) format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "Crimson Pro"; src: url(../fonts/crimsonpro-regular.woff2) format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Crimson Pro"; src: url(../fonts/crimsonpro-italic.woff2) format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+
+:root {
+  --amarelo: #FFE400;   /* CMYK 0/0/100/0 */
+  --escuro: #150A0B;    /* preto quente do encarte */
+  --branco: #FFFFFF;
+  --tinta: #150A0B;
+  --apagado: rgba(255, 255, 255, .62);
+  --linha: rgba(255, 255, 255, .14);
+  --titulo: "Futura DT", "Futura", "Century Gothic", "Trebuchet MS", sans-serif;
+  --titulo-cond: "Futura DT Cond", "Futura DT", "Futura", sans-serif;
+  --texto: "Crimson Pro", Georgia, "Times New Roman", serif;
+  --barra-h: 92px;
+  --margem: clamp(16px, 5vw, 48px);
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 1rem; }
+body {
+  margin: 0;
+  background: var(--escuro);
+  color: var(--branco);
+  font-family: var(--texto);
+  font-size: 1.1875rem;
+  line-height: 1.45;
+  overflow-x: hidden;
+}
+img, video, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; cursor: pointer; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--amarelo); outline-offset: 3px; }
+
+.raio { width: .62em; height: .85em; fill: var(--amarelo); flex: none; }
+
+.pular-conteudo { position: absolute; left: -999px; top: 0; z-index: 50; background: var(--amarelo); color: var(--tinta); padding: .5rem 1rem; font-family: var(--titulo); }
+.pular-conteudo:focus { left: 1rem; top: 1rem; }
+
+/* ================= 1. CAPA ================= */
+/* Tela cheia. Em telas estreitas (celular) a foto é recortada e mostra o lado
+   direito, como a frente da fita. Conforme a tela alarga, a foto vai se abrindo
+   para a esquerda até aparecer inteira; daí em diante a largura trava e o resto
+   fica no fundo escuro. Proporção da foto: 1931 × 2000. */
+.intro {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--escuro);
+}
+.capa {
+  position: relative;
+  height: 100%;
+  width: min(100%, 96.55vh);
+  width: min(100%, 96.55svh);
+  overflow: hidden;
+}
+.capa__foto img, .capa__video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 100% 50%;   /* ancora no lado direito */
+}
+.so-leitor {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* ================= 2. PLAYER / VERSO ================= */
+.verso {
+  max-width: 72rem; margin: 0 auto;
+  padding: clamp(3rem, 9vw, 6rem) var(--margem) clamp(3rem, 8vw, 5rem);
+}
+.marca {
+  display: flex; align-items: center; gap: .3em;
+  margin: 0 0 .6rem;
+  font-family: var(--titulo); font-size: 1rem; letter-spacing: .02em; color: var(--amarelo);
+}
+.verso__cab h2 {
+  margin: 0;
+  font-family: var(--titulo); font-weight: 700; line-height: .95;
+  font-size: clamp(2.6rem, 11vw, 5.5rem);
+}
+.verso__cab h2 span { display: block; font-size: .5em; margin-top: .25em; color: var(--apagado); }
+.manual { max-width: 34em; margin: 1.5rem 0 1.75rem; font-style: italic; color: var(--apagado); }
+.iniciar {
+  min-height: 48px; padding: 0 1.4rem;
+  font-family: var(--titulo); font-size: 1rem; text-transform: uppercase; letter-spacing: .02em;
+  background: var(--amarelo); color: var(--tinta); border: 0; border-radius: 999px;
+}
+.iniciar:hover { background: var(--branco); }
+
+.lados { display: grid; gap: 2.5rem; margin-top: clamp(2.5rem, 8vw, 4rem); }
+@media (min-width: 52rem) { .lados { grid-template-columns: 1fr 1fr; gap: 4rem; } }
+
+.lado h3 {
+  margin: 0 0 .5rem;
+  font-family: var(--titulo); font-size: 1.15rem;
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .25em;
+}
+.faixas { list-style: none; margin: 0; padding: 0; }
+.faixa { display: flex; align-items: center; border-bottom: 1px solid var(--linha); }
+.faixa__tocar {
+  flex: 1; display: flex; align-items: baseline; gap: .7rem;
+  min-height: 52px; padding: .65rem 0; text-align: left;
+  background: none; border: 0;
+  font-family: var(--titulo); font-size: 1.05rem; line-height: 1.15; text-transform: uppercase;
+}
+.faixa__num { min-width: 1.1em; color: var(--apagado); }
+.faixa__tit sup { font-size: .58em; margin-left: .3em; vertical-align: .75em; color: var(--apagado); font-weight: 700; }
+.faixa__tocar .raio { align-self: center; margin-left: auto; visibility: hidden; }
+.faixa__tocar:hover .faixa__tit { color: var(--amarelo); }
+.faixa__letra {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0 0 0 1rem;
+  font-style: italic; color: var(--apagado); text-decoration-color: var(--linha);
+}
+.faixa__letra:hover { color: var(--branco); }
+.faixa.tocando .faixa__tit, .faixa.tocando .faixa__num { color: var(--amarelo); }
+.faixa.tocando .raio { visibility: visible; }
+.faixa.tocando.pausado .raio { opacity: .4; }
+
+/* ================= 3. LETRAS / PAPEL ================= */
+.papel {
+  background: var(--branco); color: var(--tinta);
+  padding: clamp(3rem, 9vw, 6rem) var(--margem);
+  color-scheme: light;
+}
+.papel__cab, .letras { max-width: 72rem; margin: 0 auto; }
+.papel__cab h2 {
+  margin: 0; font-family: var(--titulo); font-size: clamp(2.6rem, 11vw, 5.5rem); line-height: .95;
+}
+.papel__cab p { margin: .8rem 0 0; font-style: italic; max-width: 34em; }
+.letras { margin-top: clamp(2.5rem, 7vw, 4rem); }
+@media (min-width: 60rem) { .letras { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; } }
+.letras__rotulo {
+  margin: 0 0 1.75rem; font-family: var(--titulo); font-size: 1.15rem;
+  text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .25em;
+}
+
+.letra { margin: 0 0 3.5rem; scroll-margin-top: 1.5rem; }
+.letra__cab { display: grid; grid-template-columns: auto 1fr; gap: .1rem .7rem; align-items: baseline; margin-bottom: 1rem; }
+.letra__cod {
+  font-family: var(--titulo-cond); font-weight: 800; font-size: .95rem;
+  background: var(--tinta); color: var(--amarelo); padding: .12em .4em .05em; border-radius: 2px;
+  align-self: start; margin-top: .3em;
+}
+.letra__cab h3 {
+  margin: 0; display: flex; align-items: center; gap: .3em;
+  font-family: var(--titulo); font-size: clamp(1.35rem, 5vw, 1.75rem); line-height: 1.05;
+}
+.letra__cab h3 .raio { display: none; fill: var(--tinta); }
+.letra.tocando h3 .raio { display: block; }
+.letra__origem { grid-column: 2; margin: .1rem 0 0; font-size: .95rem; font-style: italic; color: rgba(21, 10, 11, .65); }
+.ouvir {
+  grid-column: 2; justify-self: start; margin-top: .35rem;
+  min-height: 40px; padding: 0 .9rem;
+  font-family: var(--titulo); font-size: .8rem; text-transform: uppercase; letter-spacing: .03em;
+  background: none; border: 2px solid var(--tinta); border-radius: 999px; color: var(--tinta);
+}
+.ouvir:hover, .letra.tocando .ouvir { background: var(--tinta); color: var(--amarelo); }
+.letra__texto p { margin: 0 0 1.05em; }
+.letra__texto { padding-left: calc(2.1rem + .7rem); }
+.letra__ref { padding-left: calc(2.1rem + .7rem); font-style: italic; }
+@media (max-width: 30rem) { .letra__texto, .letra__ref { padding-left: 0; } }
+
+/* ================= 4. CRÉDITOS ================= */
+.creditos { max-width: 46rem; margin: 0 auto; padding: clamp(3rem, 9vw, 6rem) var(--margem) 2rem; }
+.creditos h2, .creditos h3 { font-family: var(--titulo); font-size: 1rem; letter-spacing: .02em; margin: 2rem 0 .5rem; color: var(--amarelo); }
+.creditos h2 { margin-top: 0; }
+.creditos p { margin: 0; color: var(--apagado); }
+.formacao { list-style: none; margin: 0; padding: 0; }
+.formacao li { padding: .15rem 0; }
+.formacao span { color: var(--apagado); font-style: italic; }
+.rodape { text-align: center; padding: 3rem var(--margem) calc(var(--barra-h) + 3rem + env(safe-area-inset-bottom)); color: var(--apagado); font-size: .95rem; }
+.rodape .marca { justify-content: center; }
+.rodape p { margin: 0; }
+
+/* ================= BARRA FIXA ================= */
+.barra {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  padding: 0 var(--margem) env(safe-area-inset-bottom);
+  background: rgba(21, 10, 11, .96);
+  border-top: 2px solid var(--amarelo);
+  transform: translateY(105%);
+  transition: transform .35s ease;
+}
+@supports (backdrop-filter: blur(8px)) { .barra { background: rgba(21, 10, 11, .86); backdrop-filter: blur(10px); } }
+.barra.visivel { transform: none; }
+.barra__prog {
+  display: block; width: 100%; height: 22px; margin: 0;
+  accent-color: var(--amarelo); background: transparent; cursor: pointer;
+}
+.barra__linha { display: flex; align-items: center; gap: .75rem; max-width: 72rem; margin: 0 auto; padding-bottom: .6rem; }
+.barra__botoes { display: flex; align-items: center; gap: .15rem; flex: none; }
+.barra__botoes button {
+  display: grid; place-items: center; width: 44px; height: 44px;
+  background: none; border: 0; border-radius: 50%;
+}
+.barra__botoes svg { width: 22px; height: 22px; fill: var(--branco); }
+.barra__play { background: var(--amarelo) !important; }
+.barra__play svg { fill: var(--tinta); }
+.barra__play .i-pause, .barra.tocando .barra__play .i-play { display: none; }
+.barra.tocando .barra__play .i-pause { display: block; }
+.barra__info {
+  min-width: 0; flex: 1;
+  display: grid; grid-template-columns: auto 1fr; column-gap: .5rem;
+  text-decoration: none; line-height: 1.2;
+}
+.barra__cod { font-family: var(--titulo-cond); font-weight: 800; color: var(--amarelo); font-size: .95rem; }
+.barra__tit { font-family: var(--titulo); font-size: .95rem; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.barra__tempo { grid-column: 2; font-size: .9rem; color: var(--apagado); font-variant-numeric: tabular-nums; }
+.barra__aviso {
+  position: absolute; left: 50%; bottom: calc(100% + 10px); transform: translate(-50%, 8px);
+  padding: .45rem .9rem; border-radius: 999px; white-space: nowrap;
+  background: var(--amarelo); color: var(--tinta);
+  font-family: var(--titulo); font-size: .85rem; text-transform: uppercase;
+  opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s;
+}
+.barra__aviso.on { opacity: 1; transform: translate(-50%, 0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
