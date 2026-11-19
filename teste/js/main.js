@@ -41,7 +41,8 @@
   // 9:16 só cabe bem em tela em pé; em tela larga usa o 16:9 (se existir)
   const emPe = innerWidth / innerHeight <= 0.75;
   const base = emPe ? video.dataset.srcRetrato : video.dataset.srcPaisagem;
-  const ext = video.canPlayType('video/webm; codecs="vp9"') ? 'webm' : 'mp4';
+  // MP4 (H.264) toca em qualquer celular; o WebM o iPhone diz que "talvez" toca e falha
+  const ext = 'mp4';
 
   // sem vídeo: a capa fica parada uns segundos e a página desce sozinha
   const descerSemVideo = () => { timerPlaceholder = setTimeout(() => descer(), 4000); };
